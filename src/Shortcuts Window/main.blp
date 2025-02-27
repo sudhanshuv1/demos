@@ -1,0 +1,153 @@
+using Gtk 4.0;
+using Adw 1;
+
+Adw.StatusPage {
+  title: _("Shortcuts Window");
+  description: _("A window showing the application's keyboard shortcuts");
+
+  Box {
+    spacing: 50;
+    halign: center;
+    orientation: vertical;
+
+    Button button {
+      label: _("Open");
+
+      styles [
+        "suggested-action",
+        "pill",
+      ]
+    }
+
+    LinkButton {
+      label: _("API Reference");
+      uri: "https://docs.gtk.org/gtk4/class.ShortcutsWindow.html";
+    }
+  }
+}
+
+Gtk.ShortcutsWindow shortcuts_window {
+  hide-on-close: true;
+
+  Gtk.ShortcutsSection {
+    section-name: _("Shortcuts");
+    max-height: 18;
+
+    Gtk.ShortcutsGroup {
+      title: _("Application");
+
+      Gtk.ShortcutsShortcut {
+        accelerator: "<Ctrl>Return";
+        title: _("Run Code");
+      }
+
+      Gtk.ShortcutsShortcut {
+        accelerator: "<Shift><Ctrl>Return";
+        title: _("Format");
+      }
+
+      Gtk.ShortcutsShortcut {
+        accelerator: "<Ctrl>N";
+        title: _("New Project");
+      }
+
+      Gtk.ShortcutsShortcut {
+        accelerator: "<Ctrl>O";
+        title: _("Open Project");
+      }
+
+      Gtk.ShortcutsShortcut {
+        accelerator: "<Shift><Ctrl>O";
+        title: _("Open Library");
+      }
+
+      Gtk.ShortcutsShortcut {
+        accelerator: "<Shift><Ctrl>I";
+        title: _("Inspector");
+      }
+
+      Gtk.ShortcutsShortcut {
+        accelerator: "<Ctrl>W";
+        title: _("Close Window");
+      }
+
+      Gtk.ShortcutsShortcut {
+        accelerator: "<Ctrl>M";
+        title: _("Reveal in Files");
+      }
+
+      Gtk.ShortcutsShortcut {
+        accelerator: "<Ctrl>question";
+        title: _("Keyboard Shortcuts");
+      }
+
+      Gtk.ShortcutsShortcut {
+        accelerator: "<Ctrl>Q";
+        title: _("Quit");
+      }
+    }
+
+    Gtk.ShortcutsGroup {
+      title: _("Editor");
+
+      Gtk.ShortcutsShortcut {
+        accelerator: "<Ctrl>X";
+        title: _("Cut");
+      }
+
+      Gtk.ShortcutsShortcut {
+        accelerator: "<Ctrl>C";
+        title: _("Copy");
+      }
+
+      Gtk.ShortcutsShortcut {
+        accelerator: "<Ctrl>V";
+        title: _("Paste");
+      }
+
+      Gtk.ShortcutsShortcut {
+        accelerator: "<Ctrl>F";
+        title: _("Find");
+      }
+
+      Gtk.ShortcutsShortcut {
+        accelerator: "<Ctrl>Z";
+        title: _("Undo");
+      }
+
+      Gtk.ShortcutsShortcut {
+        accelerator: "<Ctrl>space";
+        title: _("Show code suggestions");
+      }
+
+      Gtk.ShortcutsShortcut {
+        accelerator: "<Shift><Ctrl>Z";
+        title: _("Redo");
+      }
+    }
+
+    Gtk.ShortcutsGroup {
+      title: _("Console");
+
+      Gtk.ShortcutsShortcut {
+        accelerator: "<Shift><Ctrl>K";
+        title: _("Toggle Console");
+      }
+
+      Gtk.ShortcutsShortcut {
+        accelerator: "<Shift><Ctrl>C";
+        title: _("Copy");
+      }
+
+      Gtk.ShortcutsShortcut {
+        accelerator: "<Shift><Ctrl>A";
+        title: _("Select All");
+      }
+
+      Gtk.ShortcutsShortcut {
+        accelerator: "<Ctrl>K";
+        title: _("Clear");
+      }
+    }
+  }
+}
